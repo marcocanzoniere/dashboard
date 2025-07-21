@@ -105,7 +105,7 @@ else:
     st.sidebar.write(f"Sei loggato con user id: {st.session_state.user_id}")
     if st.sidebar.button("Logout"):
         st.session_state.user_id = None
-        st.experimental_rerun()
+        #st.experimental_rerun()
 
     with st.form("inserisci_spesa"):
         categoria = st.selectbox("Categoria", ["Cibo", "Affitto", "Trasporti", "Svago", "Altro"])
