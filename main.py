@@ -98,7 +98,7 @@ if st.session_state.user_id is None:
             user_id = autentica(username, password)
             if user_id:
                 st.session_state.user_id = user_id
-                st.experimental_rerun()
+                #st.experimental_rerun()
             else:
                 st.error("Username o password errati.")
 else:
