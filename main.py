@@ -94,13 +94,15 @@ if st.session_state.user_id is None:
         st.header("Login")
         username = st.text_input("Username")
         password = st.text_input("Password", type="password")
+        
         if st.button("Login"):
             user_id = autentica(username, password)
             if user_id:
                 st.session_state.user_id = user_id
-                #st.experimental_rerun()
+                st.experimental_rerun()  # Ricarica pagina dopo login
             else:
                 st.error("Username o password errati.")
+
 else:
     st.sidebar.write(f"Sei loggato con user id: {st.session_state.user_id}")
     if st.sidebar.button("Logout"):
